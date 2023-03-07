@@ -5,6 +5,7 @@ import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 
 import { MiniDrawer } from "@/components/Drawer";
 import { MainBar } from "@/components/AppBar";
+import { FabBtn } from "@/components/FabBtn";
 
 const darkTheme = createTheme({
   palette: {
@@ -12,6 +13,15 @@ const darkTheme = createTheme({
     background: {
       default: "#1F1F1F",
       paper: "#1F1F1F",
+    },
+  },
+  components: {
+    MuiSpeedDial: {
+      styleOverrides: {
+        fab: {
+          backgroundColor: "#2979ff",
+        },
+      },
     },
   },
 });
@@ -29,6 +39,7 @@ export const Layout = ({ children }: LayoutProps) => {
           <MiniDrawer>
             <MainBar />
             {children}
+            <FabBtn />
           </MiniDrawer>
         </ThemeProvider>
       </StyledEngineProvider>
